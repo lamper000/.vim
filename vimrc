@@ -20,7 +20,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/netrw.vim'
 Plugin 'javascript.vim'
 Plugin 'othree/html5.vim'
-
+Plugin 'gorodinskiy/vim-coloresque.git'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
