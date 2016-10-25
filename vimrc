@@ -19,6 +19,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/netrw.vim'
 Plugin 'javascript.vim'
+Plugin 'othree/html5.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -66,7 +67,7 @@ set fileencodings=utf-8,gbk
 set guifont=Consolas_for_Powerline_FixedD:h13
 set backspace=indent,eol,start
 syntax on
-color codeschool
+color molokai
 
 "关闭菜单栏
 if has("gui_running")
@@ -105,3 +106,9 @@ let g:airline_right_alt_sep = '⮃'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
+
+"%匹配html标签
+runtime macros/matchit.vim 
+filetype plugin on 
+
+cd appleWeb
