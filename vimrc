@@ -38,10 +38,33 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 "
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
+""""""""""""""""""""""""""""""""""""""""""  
+"""airline配置
+""""""""""""""""""""""""""""""""""""""""""  
+set t_Co=256  
+set laststatus=2  
+set lazyredraw  
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme="luna" 
+let g:airline_powerline_fonts=1  
+if !exists('g:airline_symbols')  
+	let g:airline_symbols={}  
+endif
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+
 if has("win32")
-set fileencoding=chinese
+	set fileencoding=chinese
+	let g:airline_left_sep = '⮀'
+	let g:airline_left_alt_sep = '⮁'
+	let g:airline_right_sep = '⮂'
+	let g:airline_right_alt_sep = '⮃'
+	let g:airline_symbols.branch = '⭠'
+	let g:airline_symbols.readonly = '⭤'
+	let g:airline_symbols.linenr = '⭡'
+	set guifont=Consolas_for_Powerline_FixedD:h13
 else
-set fileencoding=utf-8
+	set fileencoding=utf-8
 endif
 "解决菜单乱码
 source $VIMRUNTIME/delmenu.vim
@@ -64,7 +87,6 @@ set incsearch
 let &termencoding=&encoding
 set fileencodings=utf-8,gbk
 "set guifont=yaHei_consolas_hybrid:h13
-set guifont=Consolas_for_Powerline_FixedD:h13
 set backspace=indent,eol,start
 syntax on
 color molokai
@@ -85,30 +107,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
-""""""""""""""""""""""""""""""""""""""""""  
-"""airline配置
-""""""""""""""""""""""""""""""""""""""""""  
-set t_Co=256  
-set laststatus=2  
-set lazyredraw  
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme="luna" 
-let g:airline_powerline_fonts=1  
-if !exists('g:airline_symbols')  
-	let g:airline_symbols={}  
-endif
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
 
 "%匹配html标签
 runtime macros/matchit.vim 
 filetype plugin on 
 
-cd appleWeb
