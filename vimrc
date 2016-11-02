@@ -63,7 +63,11 @@ if has("win32")
 	let g:airline_symbols.linenr = '⭡'
 	set guifont=Consolas_for_Powerline_FixedD:h13
 else
-	set fileencoding=utf-8
+	set guifont=Inconsolata-dz\ for\ Powerline\ 11 "config font for gvim ”for gvim
+	let g:airline_left_sep = ''
+	let g:airline_left_alt_sep = ''
+	let g:airline_right_sep = ''
+	let g:airline_right_alt_sep = ''
 endif
 "解决菜单乱码 (window)
 source $VIMRUNTIME/delmenu.vim
@@ -82,6 +86,7 @@ set cindent
 set shortmess=atI
 set nocompatible
 set incsearch
+set fileformat=unix "防止window下的doc文件出现^M报错
 let &termencoding=&encoding
 set fileencodings=utf-8,gbk
 "set guifont=yaHei_consolas_hybrid:h13
@@ -89,7 +94,8 @@ set backspace=indent,eol,start
 syntax on
 color molokai
 set guicursor=n-v-c:ver1,i-ci:ver1 "改变游标样式
-
+set vb t_vb= "关闭声音
+au GuiEnter * set t_vb= "关闭闪烁报错
 "关闭菜单栏
 if has("gui_running")
 	set guioptions-=m 
@@ -106,7 +112,6 @@ endif
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "let g:UltiSnipsEditSplit="vertical"
-
 
 runtime macros/matchit.vim  "%匹配html标签
 
@@ -127,4 +132,3 @@ if has('conceal')
 endif
 let g:neosnippet#enable_snipmate_compatibility = 1 " Enable snipMate compatibility feature.
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets' " Tell Neosnippet about the other snippets
-
