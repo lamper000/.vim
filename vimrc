@@ -20,6 +20,7 @@ Plugin 'gorodinskiy/vim-coloresque.git'
 Plugin 'Shougo/neocomplcache'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'kien/ctrlp.vim'
 
 "Plugin 'SirVer/ultisnips'
 "Plugin 'L9'
