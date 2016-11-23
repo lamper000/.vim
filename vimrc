@@ -1,4 +1,4 @@
-"vundel start
+" vundel {
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -21,7 +21,6 @@ Plugin 'Shougo/neocomplcache'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'kien/ctrlp.vim'
-
 "Plugin 'SirVer/ultisnips'
 "Plugin 'L9'
 "Plugin 'git://git.wincent.com/command-t.git'
@@ -30,7 +29,7 @@ Plugin 'kien/ctrlp.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-"vundel end
+" }
 
 "代码提示
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
@@ -38,9 +37,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
-"----------------------------------------------------------------
 "编码设置(windows airline)
-"----------------------------------------------------------------
 set encoding=utf-8
 set t_Co=256  
 set laststatus=2  
@@ -52,14 +49,17 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols={}  
 endif
 let g:airline#extensions#tabline#buffer_nr_show = 1
+nnoremap <C-TAB> :bn<CR>
+nnoremap <S-TAB> :bp<CR>
 
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = 'BR:'
-let g:airline_symbols.readonly = 'LO'
+let g:airline_symbols.readonly = 'Lk'
 let g:airline_symbols.linenr = 'LN:'
+
 "解决菜单乱码 (window)
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -88,6 +88,7 @@ color molokai
 set guicursor=n-v-c:ver1,i-ci:ver1 "改变游标样式
 set vb t_vb= "关闭声音
 au GuiEnter * set t_vb= "关闭闪烁报错
+
 "关闭菜单栏
 if has("gui_running")
 	set guioptions-=m 
@@ -112,9 +113,9 @@ let g:neocomplcache_enable_at_startup = 1
 
 "neosnippet snippets代码块补全
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <TAB>     <Plug>(neosnippet_expand_or_jump)
+smap <TAB>     <Plug>(neosnippet_expand_or_jump)
+xmap <TAB>     <Plug>(neosnippet_expand_target)
 
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 			\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
