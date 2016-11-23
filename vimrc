@@ -53,23 +53,13 @@ if !exists('g:airline_symbols')
 endif
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-
-if has("win32")
-	let g:airline_left_sep = '⮀'
-	let g:airline_left_alt_sep = '⮁'
-	let g:airline_right_sep = '⮂'
-	let g:airline_right_alt_sep = '⮃'
-	let g:airline_symbols.branch = '⭠'
-	let g:airline_symbols.readonly = '⭤'
-	let g:airline_symbols.linenr = '⭡'
-	set guifont=Consolas_for_Powerline_FixedD:h13
-else
-	set guifont=Inconsolata-dz\ for\ Powerline\ 11 "config font for gvim ”for gvim
-	let g:airline_left_sep = ''
-	let g:airline_left_alt_sep = ''
-	let g:airline_right_sep = ''
-	let g:airline_right_alt_sep = ''
-endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = 'BR:'
+let g:airline_symbols.readonly = 'LO'
+let g:airline_symbols.linenr = 'LN:'
 "解决菜单乱码 (window)
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -91,6 +81,7 @@ set fileformat=unix "防止window下的doc文件出现^M报错
 let &termencoding=&encoding
 set fileencodings=utf-8,gbk
 "set guifont=yaHei_consolas_hybrid:h13
+set guifont=yaHei_consolas_hybrid:h11
 set backspace=indent,eol,start
 syntax on
 color molokai
@@ -105,7 +96,7 @@ if has("gui_running")
 	set guioptions-=r 
 	set guioptions-=b 
 	set showtabline=0 
-	color solarized "gvim时启用solarized
+	color molokai "gvim时启用solarized
 endif
 
 "UltiSnips
